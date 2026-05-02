@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://thefreelancerstack.com/blog.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -189,6 +189,36 @@
   <url>
     <loc>https://thefreelancerstack.com/blog/vpn-cafe-wifi-freelancers.html</loc>
     <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://thefreelancerstack.com/blog/picking-project-management-freelancer.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://thefreelancerstack.com/blog/client-data-cafes-protection.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://thefreelancerstack.com/blog/grammarly-vs-hemingway-paying.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://thefreelancerstack.com/blog/free-invoicing-hidden-cost.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://thefreelancerstack.com/blog/three-tools-new-freelancer.html</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
