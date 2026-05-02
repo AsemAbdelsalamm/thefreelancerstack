@@ -111,8 +111,55 @@ section[aria-labelledby="cons-heading"] ul li::before {
 
 .blog-index-list > li:not(:first-child) {
   border-top: 1px solid #e8e0d5;
-  margin-top: 40px;
-  padding-top: 40px;
+  margin-top: 60px;
+  padding-top: 60px;
+}
+
+.categories-card-title-icon {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 1;
+  color: #c4622d;
+  vertical-align: middle;
+}
+
+.blog-index-article-slot {
+  position: relative;
+  padding-left: 6.75rem;
+}
+
+@media (min-width: 640px) {
+  .blog-index-article-slot {
+    padding-left: 8.25rem;
+  }
+}
+
+.blog-index-issue-num {
+  position: absolute;
+  left: 0;
+  top: -0.12em;
+  z-index: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: #e8e0d5;
+  user-select: none;
+  pointer-events: none;
+}
+
+.blog-index-article-slot > .blog-index-article-inner {
+  position: relative;
+  z-index: 1;
+  margin-left: -1.125rem;
+}
+
+@media (min-width: 640px) {
+  .blog-index-article-slot > .blog-index-article-inner {
+    margin-left: -1.5rem;
+  }
 }
 
 .blog-index-title a {
@@ -122,6 +169,11 @@ section[aria-labelledby="cons-heading"] ul li::before {
 .blog-index-title a:hover {
   text-decoration: underline;
   text-decoration-color: rgba(196, 98, 45, 0.55);
+}
+
+.blog-index-title {
+  font-size: 32px;
+  line-height: 1.15;
 }
 
 /* Homepage — opinion-led hero headline (longer line fits) */
