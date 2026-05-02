@@ -127,6 +127,7 @@
 
   function attach() {
     var matrixSection = document.querySelector("[data-blog-matrix]");
+    var loadWrap = document.getElementById("blog-load-more-wrap");
     var loadBtn = document.getElementById("blog-load-more");
     if (!matrixSection || !loadBtn) return;
 
@@ -176,6 +177,7 @@
       var hiddenByPage = pool.length > visibleLimit;
       loadBtn.disabled = !hiddenByPage;
       loadBtn.setAttribute("aria-disabled", hiddenByPage ? "false" : "true");
+      if (loadWrap) loadWrap.hidden = !hiddenByPage;
 
       matrixSection.hidden = pool.length === 0;
       syncMatrixHairlines(matrixArticles);
