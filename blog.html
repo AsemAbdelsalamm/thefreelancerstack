@@ -51,8 +51,8 @@
 <body class="min-h-screen flex flex-col bg-page text-ink font-sans text-[17px] leading-[1.75] antialiased" data-page="blog">
  <div id="site-header"></div>
 
- <main id="main-content" class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
- <nav class="text-sm text-muted mb-8" aria-label="Breadcrumb">
+ <main id="main-content" class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
+ <nav class="text-sm text-muted mb-10" aria-label="Breadcrumb">
  <ol class="flex flex-wrap gap-2">
  <li><a href="/index.html" class="hover:text-accent transition-colors">Home</a></li>
  <li aria-hidden="true">/</li>
@@ -60,502 +60,267 @@
  </ol>
  </nav>
 
- <header class="mb-14">
- <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight">Notes from the desk</h1>
- <p class="mt-4 text-lg text-muted max-w-2xl leading-relaxed">
+ <div class="mb-12 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+ <div class="min-w-0 max-w-2xl">
+ <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight font-serif">Notes from the desk</h1>
+ <p class="mt-3 text-lg text-muted leading-relaxed">
  Notes from real client work, not growth-hack fluff.
  </p>
- </header>
+ </div>
+ <div class="shrink-0 lg:pt-1" role="toolbar" aria-label="Filter articles by category">
+ <div class="flex flex-wrap gap-2 justify-start lg:justify-end">
+ <button type="button" data-blog-filter="all" aria-pressed="true" class="blog-filter-btn border border-border bg-ink px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-page transition-colors hover:bg-[#141414]">All</button>
+ <button type="button" data-blog-filter="writing" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Writing</button>
+ <button type="button" data-blog-filter="design" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Design</button>
+ <button type="button" data-blog-filter="finance" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Finance</button>
+ <button type="button" data-blog-filter="security" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Security</button>
+ <button type="button" data-blog-filter="workflow" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Workflow</button>
+ </div>
+ </div>
+ </div>
 
- <section aria-labelledby="articles-heading">
- <h2 id="articles-heading" class="sr-only">Articles</h2>
- <ul class="blog-index-list">
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">01</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Starter stack</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/three-tools-new-freelancer.html">The only 3 tools a new freelancer actually needs</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-Start with the essentials that keep work moving: a way to get paid, a place to track commitments, and a writing tool that protects your reputation.
+ <div id="blog-featured-shell" data-blog-featured-shell>
+ <section class="mb-14 border border-border bg-border p-px flex flex-col md:flex-row gap-px" aria-label="Featured articles">
+ <article class="blog-feature-slot blog-hairline-cell flex-1 p-6 sm:p-8 lg:p-10 flex flex-col gap-4 min-h-0 md:min-h-[16rem]" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Starter stack<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h2 class="text-2xl sm:text-[2.15rem] lg:text-[2.6rem] font-serif font-semibold tracking-tight text-ink leading-tight">
+ <a href="/blog/three-tools-new-freelancer.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">The only 3 tools a new freelancer actually needs</a>
+ </h2>
+ <p class="text-muted leading-relaxed text-[15px] sm:text-base flex-1">
+ Start with the essentials that keep work moving: a way to get paid, a place to track commitments, and a writing tool that protects your reputation.
  </p>
- <p class="font-sans">
-<a href="/blog/three-tools-new-freelancer.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
+ <p>
+ <a href="/blog/three-tools-new-freelancer.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a>
  </p>
- </div>
- </div>
  </article>
- </li>
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">02</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Finance</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/free-invoicing-hidden-cost.html">Why free invoicing tools cost you more than paid ones</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-Free invoicing often moves the cost into late payments, manual reminders, and awkward client experiences. This helps you price the real tradeoff.
+ <article class="blog-feature-slot blog-hairline-cell flex-1 p-6 sm:p-7 flex flex-col gap-3" data-blog-category="finance">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Finance<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h2 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/free-invoicing-hidden-cost.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Why free invoicing tools cost you more than paid ones</a>
+ </h2>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Free invoicing often moves the cost into late payments, manual reminders, and awkward client experiences. This helps you price the real tradeoff.
  </p>
- <p class="font-sans">
-<a href="/blog/free-invoicing-hidden-cost.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
+ <p>
+ <a href="/blog/free-invoicing-hidden-cost.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a>
  </p>
- </div>
- </div>
  </article>
- </li>
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">03</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
- <p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Writing</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
- <a href="/blog/grammarly-vs-hemingway-paying.html">Grammarly vs Hemingway: which one is worth paying for</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-One tool catches mistakes before clients do, while the other makes your drafts sharper. The right choice depends on the kind of writing that earns your income.
+ <article class="blog-feature-slot blog-hairline-cell flex-1 p-6 sm:p-7 flex flex-col gap-3" data-blog-category="writing">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Writing<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h2 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/grammarly-vs-hemingway-paying.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Grammarly vs Hemingway: which one is worth paying for</a>
+ </h2>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ One tool catches mistakes before clients do, while the other makes your drafts sharper. The right choice depends on the kind of writing that earns your income.
  </p>
- <p class="font-sans">
- <a href="/blog/grammarly-vs-hemingway-paying.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
+ <p>
+ <a href="/blog/grammarly-vs-hemingway-paying.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a>
  </p>
- </div>
- </div>
  </article>
- </li>
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">04</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Security</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/client-data-cafes-protection.html">How to protect client data working from cafes</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-Cafe work can be productive, but public networks and visible screens change the risk. Build simple habits before client files leave your desk.
- </p>
- <p class="font-sans">
-<a href="/blog/client-data-cafes-protection.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
- </p>
- </div>
- </div>
- </article>
- </li>
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">05</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Delivery</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/picking-project-management-freelancer.html">The freelancer's guide to picking project management software</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-Choose project management software around the way your clients actually behave. A good tool should reduce follow-up, not become another admin chore.
- </p>
- <p class="font-sans">
-<a href="/blog/picking-project-management-freelancer.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
- </p>
- </div>
- </div>
- </article>
- </li>
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">06</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Systems</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/notion-worth-it-freelancers.html">Is Notion actually worth it for freelancers</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-Notion can be a client hub, a knowledge base, or a beautiful way to procrastinate. Use it where structure saves work, not where it hides decisions.
- </p>
- <p class="font-sans">
-<a href="/blog/notion-worth-it-freelancers.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
- </p>
- </div>
- </div>
- </article>
- </li>
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">07</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Operations</p>
- <p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/best-tools-admin-averse-freelancers.html">Best tools for freelancers who hate admin work</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-If admin makes you avoid your own business, the stack has to be lighter. These tools remove friction from invoices, scheduling, files, and follow-up.
- </p>
- <p class="font-sans">
-<a href="/blog/best-tools-admin-averse-freelancers.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
- </p>
- </div>
- </div>
- </article>
- </li>
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">08</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Finance</p>
- <p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/invoice-faster-freelancers.html">How to send invoices that get paid faster</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-Faster payment usually comes from clearer terms, better timing, and fewer steps for the client. Small invoice details can change the whole cash flow.
- </p>
- <p class="font-sans">
-<a href="/blog/invoice-faster-freelancers.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
- </p>
- </div>
- </div>
- </article>
- </li>
- <li>
- <article>
- <div class="blog-index-article-slot">
- <span class="blog-index-issue-num" aria-hidden="true">09</span>
- <div class="blog-index-article-inner space-y-5">
- <header class="space-y-1">
- <p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Security</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
- <h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/nordvpn-vs-expressvpn-remote-work.html">NordVPN vs ExpressVPN: which is better for remote work</a>
- </h3>
- </header>
- <p class="text-muted leading-relaxed font-sans">
-Remote work makes VPN speed, device coverage, and trust matter more than flashy discounts. Compare the two through a freelancer's daily routine.
- </p>
- <p class="font-sans">
-<a href="/blog/nordvpn-vs-expressvpn-remote-work.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
- </p>
- </div>
- </div>
- </article>
- </li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">10</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Design</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/design-tools-non-designers.html">The best free design tools for non-designers</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-You do not need a full design suite to make client-facing work look credible. Start with tools that handle layouts, graphics, and cleanup quickly.
-</p>
-<p class="font-sans">
-<a href="/blog/design-tools-non-designers.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">11</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Sales</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/better-client-proposals-freelance.html">How to write better client proposals</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-A good proposal proves you understood the problem before it sells the solution. Make scope, outcomes, and next steps easy for a busy client to say yes to.
-</p>
-<p class="font-sans">
-<a href="/blog/better-client-proposals-freelance.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">12</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Security</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/why-freelancers-need-vpn.html">Why every freelancer needs a VPN</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-A VPN is not a magic shield, but it is a practical baseline when your office changes by the week. Use it alongside passwords, updates, and common sense.
-</p>
-<p class="font-sans">
-<a href="/blog/why-freelancers-need-vpn.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">13</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Delivery</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/best-pm-tools-solo-freelancers.html">Best project management tools for solo freelancers</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-Solo freelancers need clarity without team-sized overhead. Compare tools by how well they track commitments, client updates, and the next useful action.
-</p>
-<p class="font-sans">
-<a href="/blog/best-pm-tools-solo-freelancers.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">14</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Operations</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/professional-freelance-workflow-setup.html">How to set up a professional freelance workflow</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-Professional does not have to mean complicated. A dependable workflow tells clients what happens next and gives you fewer loose ends to remember.
-</p>
-<p class="font-sans">
-<a href="/blog/professional-freelance-workflow-setup.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">15</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Design</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/canva-vs-figma-freelancers-use.html">Canva vs Figma: which one should freelancers use</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-Canva is fast for polished assets, while Figma is stronger for interface work and collaboration. Pick based on what you deliver, not what designers argue about.
-</p>
-<p class="font-sans">
-<a href="/blog/canva-vs-figma-freelancers-use.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">16</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Finance</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/best-invoicing-software-freelancers-2026.html">The best invoicing software for freelancers in 2026</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-The best invoice tool is the one that makes payment easy and records clean. Look for reminders, payment links, tax support, and client-friendly receipts.
-</p>
-<p class="font-sans">
-<a href="/blog/best-invoicing-software-freelancers-2026.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">17</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Hosting</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/hosting-portfolio-freelancers-guide.html">How to choose the right hosting for your portfolio</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-Your portfolio host should be fast, stable, and easy to update before a sales call. Match the platform to your technical comfort and the work you showcase.
-</p>
-<p class="font-sans">
-<a href="/blog/hosting-portfolio-freelancers-guide.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">18</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Writing</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/writing-tools-freelancers-hate-editing.html">Best writing tools for freelancers who hate editing</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-Editing is easier when tools catch repetition, unclear sentences, and small mistakes before review. Build a cleanup pass that does not drain your whole afternoon.
-</p>
-<p class="font-sans">
-<a href="/blog/writing-tools-freelancers-hate-editing.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">19</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Delivery</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/manage-client-communication-professionally.html">How to manage client communication like a pro</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-Professional communication is mostly rhythm, clarity, and fewer surprises. Set expectations early so updates feel calm instead of reactive.
-</p>
-<p class="font-sans">
-<a href="/blog/manage-client-communication-professionally.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">20</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Security</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/freelancer-staying-secure-online-guide.html">The freelancer's guide to staying secure online</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-Security gets easier when it becomes routine. Cover passwords, devices, backups, VPNs, and client files with habits you can actually maintain.
-</p>
-<p class="font-sans">
-<a href="/blog/freelancer-staying-secure-online-guide.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">21</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Field notes</p>
-<p class="text-muted text-sm font-sans">5 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/vpn-cafe-wifi-freelancers.html">Why café Wi‑Fi is a freelancer risk (and what to do)</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-Cafe Wi-Fi is convenient, but convenience can expose logins, files, and client work. Learn what to avoid and when a VPN or hotspot is the smarter move.
-</p>
-<p class="font-sans">
-<a href="/blog/vpn-cafe-wifi-freelancers.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
-<li>
-<article>
-<div class="blog-index-article-slot">
-<span class="blog-index-issue-num" aria-hidden="true">22</span>
-<div class="blog-index-article-inner space-y-5">
-<header class="space-y-1">
-<p class="text-accent text-xs font-semibold uppercase tracking-wider font-sans">Workflow</p>
-<p class="text-muted text-sm font-sans">4 min read</p>
-<h3 class="blog-index-title mt-4 font-serif font-semibold tracking-tight text-ink">
-<a href="/blog/build-your-freelancer-stack.html">How to build a freelancer stack that ages well</a>
-</h3>
-</header>
-<p class="text-muted leading-relaxed font-sans">
-A durable freelancer stack starts with the bottleneck you feel every week. Add tools only when they make delivery, payment, or communication easier to repeat.
-</p>
-<p class="font-sans">
-<a href="/blog/build-your-freelancer-stack.html" class="text-accent text-sm font-medium underline decoration-accent underline-offset-[3px]">Read article →</a>
-</p>
-</div>
-</div>
-</article>
-</li>
- </ul>
  </section>
+ </div>
+
+ <section aria-labelledby="blog-matrix-heading" data-blog-matrix>
+ <h2 id="blog-matrix-heading" class="sr-only">All articles</h2>
+ <div class="blog-hairline-grid blog-hairline-grid-cols-3">
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="security">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Security<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/client-data-cafes-protection.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">How to protect client data working from cafes</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Cafe work can be productive, but public networks and visible screens change the risk. Build simple habits before client files leave your desk.
+ </p>
+ <p><a href="/blog/client-data-cafes-protection.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Delivery<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/picking-project-management-freelancer.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">The freelancer&apos;s guide to picking project management software</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Choose project management software around the way your clients actually behave. A good tool should reduce follow-up, not become another admin chore.
+ </p>
+ <p><a href="/blog/picking-project-management-freelancer.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Systems<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/notion-worth-it-freelancers.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Is Notion actually worth it for freelancers</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Notion can be a client hub, a knowledge base, or a beautiful way to procrastinate. Use it where structure saves work, not where it hides decisions.
+ </p>
+ <p><a href="/blog/notion-worth-it-freelancers.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Operations<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/best-tools-admin-averse-freelancers.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Best tools for freelancers who hate admin work</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ If admin makes you avoid your own business, the stack has to be lighter. These tools remove friction from invoices, scheduling, files, and follow-up.
+ </p>
+ <p><a href="/blog/best-tools-admin-averse-freelancers.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="finance">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Finance<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/invoice-faster-freelancers.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">How to send invoices that get paid faster</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Faster payment usually comes from clearer terms, better timing, and fewer steps for the client. Small invoice details can change the whole cash flow.
+ </p>
+ <p><a href="/blog/invoice-faster-freelancers.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="security">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Security<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/nordvpn-vs-expressvpn-remote-work.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">NordVPN vs ExpressVPN: which is better for remote work</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Remote work makes VPN speed, device coverage, and trust matter more than flashy discounts. Compare the two through a freelancer&apos;s daily routine.
+ </p>
+ <p><a href="/blog/nordvpn-vs-expressvpn-remote-work.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="design">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Design<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/design-tools-non-designers.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">The best free design tools for non-designers</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ You do not need a full design suite to make client-facing work look credible. Start with tools that handle layouts, graphics, and cleanup quickly.
+ </p>
+ <p><a href="/blog/design-tools-non-designers.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Sales<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/better-client-proposals-freelance.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">How to write better client proposals</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ A good proposal proves you understood the problem before it sells the solution. Make scope, outcomes, and next steps easy for a busy client to say yes to.
+ </p>
+ <p><a href="/blog/better-client-proposals-freelance.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="security">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Security<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/why-freelancers-need-vpn.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Why every freelancer needs a VPN</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ A VPN is not a magic shield, but it is a practical baseline when your office changes by the week. Use it alongside passwords, updates, and common sense.
+ </p>
+ <p><a href="/blog/why-freelancers-need-vpn.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Delivery<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/best-pm-tools-solo-freelancers.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Best project management tools for solo freelancers</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Solo freelancers need clarity without team-sized overhead. Compare tools by how well they track commitments, client updates, and the next useful action.
+ </p>
+ <p><a href="/blog/best-pm-tools-solo-freelancers.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Operations<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/professional-freelance-workflow-setup.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">How to set up a professional freelance workflow</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Professional does not have to mean complicated. A dependable workflow tells clients what happens next and gives you fewer loose ends to remember.
+ </p>
+ <p><a href="/blog/professional-freelance-workflow-setup.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="design">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Design<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/canva-vs-figma-freelancers-use.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Canva vs Figma: which one should freelancers use</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Canva is fast for polished assets, while Figma is stronger for interface work and collaboration. Pick based on what you deliver, not what designers argue about.
+ </p>
+ <p><a href="/blog/canva-vs-figma-freelancers-use.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="finance">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Finance<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/best-invoicing-software-freelancers-2026.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">The best invoicing software for freelancers in 2026</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ The best invoice tool is the one that makes payment easy and records clean. Look for reminders, payment links, tax support, and client-friendly receipts.
+ </p>
+ <p><a href="/blog/best-invoicing-software-freelancers-2026.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Hosting<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/hosting-portfolio-freelancers-guide.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">How to choose the right hosting for your portfolio</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Your portfolio host should be fast, stable, and easy to update before a sales call. Match the platform to your technical comfort and the work you showcase.
+ </p>
+ <p><a href="/blog/hosting-portfolio-freelancers-guide.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="writing">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Writing<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/writing-tools-freelancers-hate-editing.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Best writing tools for freelancers who hate editing</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Editing is easier when tools catch repetition, unclear sentences, and small mistakes before review. Build a cleanup pass that does not drain your whole afternoon.
+ </p>
+ <p><a href="/blog/writing-tools-freelancers-hate-editing.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Delivery<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/manage-client-communication-professionally.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">How to manage client communication like a pro</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Professional communication is mostly rhythm, clarity, and fewer surprises. Set expectations early so updates feel calm instead of reactive.
+ </p>
+ <p><a href="/blog/manage-client-communication-professionally.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="security">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Security<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/freelancer-staying-secure-online-guide.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">The freelancer&apos;s guide to staying secure online</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Security gets easier when it becomes routine. Cover passwords, devices, backups, VPNs, and client files with habits you can actually maintain.
+ </p>
+ <p><a href="/blog/freelancer-staying-secure-online-guide.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="security">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Field notes<span class="text-muted font-normal"> · 5 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/vpn-cafe-wifi-freelancers.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">Why café Wi‑Fi is a freelancer risk (and what to do)</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ Cafe Wi‑Fi is convenient, but convenience can expose logins, files, and client work. Learn what to avoid and when a VPN or hotspot is the smarter move.
+ </p>
+ <p><a href="/blog/vpn-cafe-wifi-freelancers.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ <article class="blog-matrix-cell blog-hairline-cell p-6 sm:p-7 flex flex-col gap-3" data-blog-category="workflow">
+ <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent font-sans">Workflow<span class="text-muted font-normal"> · 4 min read</span></p>
+ <h3 class="text-lg sm:text-xl font-serif font-semibold tracking-tight text-ink leading-snug">
+ <a href="/blog/build-your-freelancer-stack.html" class="text-ink hover:text-accent transition-colors no-underline hover:underline decoration-accent underline-offset-4">How to build a freelancer stack that ages well</a>
+ </h3>
+ <p class="text-muted leading-relaxed text-sm sm:text-[15px] flex-1">
+ A durable freelancer stack starts with the bottleneck you feel every week. Add tools only when they make delivery, payment, or communication easier to repeat.
+ </p>
+ <p><a href="/blog/build-your-freelancer-stack.html" class="text-accent text-sm font-semibold underline decoration-accent underline-offset-[3px]">Read article →</a></p>
+ </article>
+ </div>
+ </section>
+
+ <div class="mt-12 flex justify-center">
+ <button type="button" id="blog-load-more" class="rounded-none border border-ink bg-transparent px-10 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:bg-ink hover:text-page">
+ Load more
+ </button>
+ </div>
  </main>
 
  <div id="site-footer"></div>

@@ -195,6 +195,39 @@ section[aria-labelledby="cons-heading"] ul li::before {
   line-height: 1.15;
 }
 
+/* Professional blog index: 1px hairline grids (gap technique) */
+[data-page="blog"] .blog-hairline-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background-color: #e8e0d5;
+  border: 1px solid #e8e0d5;
+}
+
+@media (min-width: 768px) {
+  [data-page="blog"] .blog-hairline-grid.blog-hairline-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+[data-page="blog"] .blog-hairline-cell {
+  background-color: #ffffff;
+}
+
+[data-page="blog"] .blog-filter-btn {
+  border-radius: 0;
+}
+
+[data-page="blog"] .blog-filter-hidden,
+[data-page="blog"] .blog-paginated-hidden {
+  display: none !important;
+}
+
+[data-page="blog"] .blog-load-more[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 /* Homepage — opinion-led hero headline (longer line fits) */
 .home-hero-hook {
   font-family: "Playfair Display", Georgia, serif;

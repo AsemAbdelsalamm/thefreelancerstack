@@ -64,3 +64,114 @@
     inject();
   }
 })();
+
+/**
+ * Blog index: category filtering + staggered reveal (load more).
+ * Expects markup in blog.html — see [data-blog-matrix], #blog-load-more, [data-blog-filter].
+ */
+(function initBlogListing() {
+  var INITIAL_VISIBLE = 9;
+  var LOAD_STEP = 9;
+
+  function qsa(sel, root) {
+    return Array.prototype.slice.call((root || document).querySelectorAll(sel));
+  }
+
+  function setFilterButtonsActive(activeFilter) {
+    qsa("[data-blog-filter]").forEach(function (btn) {
+      var key = btn.getAttribute("data-blog-filter") || "all";
+      var on = key === activeFilter;
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.classList.toggle("bg-ink", on);
+      btn.classList.toggle("text-page", on);
+      btn.classList.toggle("bg-surface", !on);
+      btn.classList.toggle("text-muted", !on);
+    });
+  }
+
+  function applyFeaturedShell(featuredArticles, shell) {
+    if (!shell) return;
+    var any = featuredArticles.some(function (el) {
+      return !el.classList.contains("blog-filter-hidden");
+    });
+    shell.style.display = any ? "" : "none";
+  }
+
+  function attach() {
+    var matrixSection = document.querySelector("[data-blog-matrix]");
+    var loadBtn = document.getElementById("blog-load-more");
+    if (!matrixSection || !loadBtn) return;
+
+    var shell = document.querySelector("[data-blog-featured-shell]");
+    var featuredArticles = qsa(".blog-feature-slot");
+    var matrixArticles = qsa(".blog-matrix-cell", matrixSection);
+    var filterButtons = qsa("[data-blog-filter]");
+
+    var currentFilter = "all";
+    var visibleLimit = INITIAL_VISIBLE;
+
+    function categoryMatches(cat) {
+      return currentFilter === "all" || cat === currentFilter;
+    }
+
+    function applyFiltering() {
+      var allPieces = featuredArticles.concat(matrixArticles);
+      allPieces.forEach(function (el) {
+        var cat = el.getAttribute("data-blog-category") || "";
+        var ok = categoryMatches(cat);
+        el.classList.toggle("blog-filter-hidden", !ok);
+      });
+
+      featuredArticles.forEach(function (el) {
+        el.classList.remove("blog-paginated-hidden");
+      });
+
+      applyFeaturedShell(featuredArticles, shell);
+
+      visibleLimit = INITIAL_VISIBLE;
+      applyPagination();
+      setFilterButtonsActive(currentFilter);
+    }
+
+    function visibleMatrixPool() {
+      return matrixArticles.filter(function (el) {
+        return !el.classList.contains("blog-filter-hidden");
+      });
+    }
+
+    function applyPagination() {
+      var pool = visibleMatrixPool();
+      pool.forEach(function (el, idx) {
+        el.classList.toggle("blog-paginated-hidden", idx >= visibleLimit);
+      });
+
+      var hiddenByPage = pool.length > visibleLimit;
+      loadBtn.disabled = !hiddenByPage;
+      loadBtn.setAttribute("aria-disabled", hiddenByPage ? "false" : "true");
+
+      matrixSection.hidden = pool.length === 0;
+    }
+
+    filterButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var key = btn.getAttribute("data-blog-filter") || "all";
+        currentFilter = key;
+        applyFiltering();
+      });
+    });
+
+    loadBtn.addEventListener("click", function () {
+      if (loadBtn.disabled) return;
+      visibleLimit += LOAD_STEP;
+      applyPagination();
+    });
+
+    applyFiltering();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", attach);
+  } else {
+    attach();
+  }
+})();
