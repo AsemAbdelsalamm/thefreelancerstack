@@ -102,33 +102,26 @@ section[aria-labelledby="cons-heading"] ul li::before {
   background-size: 12px 12px;
 }
 
-/* Blog index: magazine / newspaper preview */
-.blog-card-preview {
-  border-radius: 0;
-  border: 1px solid #e8e0d5;
-  background: #ffffff;
-  box-shadow: none;
-  border-top: 3px solid #c4622d;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+/* Blog index: ruled editorial list (no cards, no shadows) */
+.blog-index-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.blog-card-preview:hover {
-  border-color: #dcd4c8;
-  background: #fffefb;
+.blog-index-list > li:not(:first-child) {
+  border-top: 1px solid #e8e0d5;
+  margin-top: 40px;
+  padding-top: 40px;
 }
 
-.blog-card-preview h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 600;
-}
-
-.blog-card-preview h3 a {
+.blog-index-title a {
   text-decoration: none;
 }
 
-.blog-card-preview h3 a:hover {
+.blog-index-title a:hover {
   text-decoration: underline;
-  text-decoration-color: rgba(196, 98, 45, 0.45);
+  text-decoration-color: rgba(196, 98, 45, 0.55);
 }
 
 /* Homepage — opinion-led hero headline (longer line fits) */
