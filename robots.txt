@@ -1,0 +1,5 @@
+# TODO: Update Sitemap URL if your production domain differs from thefreelancerstack.com
+User-agent: *
+Allow: /
+
+Sitemap: https://thefreelancerstack.com/sitemap.xml

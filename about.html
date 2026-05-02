@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Learn how The Freelancer Stack picks tools, handles affiliate links, and helps freelancers choose software with confidence.">
+ <title>About Us, The Freelancer Stack</title>
+ <link rel="canonical" href="https://thefreelancerstack.com/about.html">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ page: '#FAF7F2',
+ surface: '#FFFFFF',
+ band: '#F2EBE0',
+ ink: '#1A1A1A',
+ muted: '#6B6560',
+ accent: '#C4622D',
+ border: '#E8E0D5',
+ footer: '#2C1810',
+ footerMuted: '#D7CEC7',
+ star: '#E4A853',
+ warm: '#EDE6DC',
+ },
+ fontFamily: {
+ sans: ['Inter', 'system-ui', 'sans-serif'],
+ serif: ['Playfair Display', 'Georgia', 'serif'],
+ },
+ boxShadow: {
+ warm: '0 2px 14px rgba(44, 24, 16, 0.07), 0 1px 3px rgba(44, 24, 16, 0.05)',
+ },
+ },
+ },
+ };
+ </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="/assets/editorial.css">
+</head>
+<body class="min-h-screen flex flex-col bg-page text-ink font-sans text-[17px] leading-[1.75] antialiased" data-page="about">
+ <div id="site-header"></div>
+
+ <main id="main-content" class="flex-1 max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
+ <nav class="text-sm text-muted mb-8" aria-label="Breadcrumb">
+ <ol class="flex flex-wrap gap-2">
+ <li><a href="/index.html" class="hover:text-accent transition-colors">Home</a></li>
+ <li aria-hidden="true">/</li>
+ <li class="text-muted">About</li>
+ </ol>
+ </nav>
+
+ <article>
+ <header class="mb-10">
+ <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight">About The Freelancer Stack</h1>
+ <p class="mt-4 text-lg text-muted leading-relaxed">
+ We are a small editorial site by freelancers, for freelancers, focused on practical tools that quietly improve how you sell, deliver, and get paid.
+ </p>
+ </header>
+
+ <section class="space-y-8 text-muted leading-relaxed" aria-labelledby="mission-heading">
+ <div>
+ <h2 id="mission-heading" class="text-xl font-semibold text-ink mb-3">What we care about</h2>
+ <p>
+ Freelancers juggle sales, delivery, admin, and learning, often on their own. Our goal is to shrink research time with clear category guides, honest pros and cons, and links when you are ready to try something new.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="text-xl font-semibold text-ink mb-3">How we pick tools</h2>
+ <p>
+ We favor products with strong reputations among independent workers, sensible pricing paths for solo operators, and workflows that hold up under real client deadlines. When something is niche or quirky, we say so.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="text-xl font-semibold text-ink mb-3">Affiliate disclosure</h2>
+ <p>
+ Some outbound links on this site may be affiliate links. That means we could earn a commission if you sign up or purchase, never at extra cost to you. <!-- TODO: Replace placeholder affiliate links across tool pages with your tracked URLs. --> Recommendations stay editorial; sponsorships, if any later, will be labeled clearly.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="text-xl font-semibold text-ink mb-3">Say hello</h2>
+ <p>
+ Spot something outdated or missing a category you need? We want The Freelancer Stack to stay useful over time. Browse <a href="/categories.html" class="text-accent hover:underline">all categories</a> or read longer tips on the <a href="/blog.html" class="text-accent hover:underline">blog</a>.
+ </p>
+ </div>
+ </section>
+ </article>
+ </main>
+
+ <div id="site-footer"></div>
+ <script src="/assets/site.js"></script>
+</body>
+</html>
