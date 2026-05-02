@@ -97,6 +97,34 @@
     shell.style.display = any ? "" : "none";
   }
 
+  var HAIR =
+    "blog-matrix-hair-bl blog-matrix-hair-bt blog-matrix-hair-br blog-matrix-hair-bb";
+
+  function syncMatrixHairlines(matrixArticles) {
+    var visible = matrixArticles.filter(function (el) {
+      return (
+        !el.classList.contains("blog-filter-hidden") &&
+        !el.classList.contains("blog-paginated-hidden")
+      );
+    });
+    var n = visible.length;
+    var cols = window.matchMedia("(min-width: 768px)").matches ? 3 : 1;
+
+    matrixArticles.forEach(function (el) {
+      HAIR.split(" ").forEach(function (c) {
+        el.classList.remove(c);
+      });
+    });
+
+    visible.forEach(function (el, idx) {
+      var col = idx % cols;
+      if (col === 0) el.classList.add("blog-matrix-hair-bl");
+      if (idx < cols) el.classList.add("blog-matrix-hair-bt");
+      if (cols > 1) el.classList.add("blog-matrix-hair-br");
+      el.classList.add("blog-matrix-hair-bb");
+    });
+  }
+
   function attach() {
     var matrixSection = document.querySelector("[data-blog-matrix]");
     var loadBtn = document.getElementById("blog-load-more");
@@ -150,7 +178,12 @@
       loadBtn.setAttribute("aria-disabled", hiddenByPage ? "false" : "true");
 
       matrixSection.hidden = pool.length === 0;
+      syncMatrixHairlines(matrixArticles);
     }
+
+    window.addEventListener("resize", function () {
+      syncMatrixHairlines(matrixArticles);
+    });
 
     filterButtons.forEach(function (btn) {
       btn.addEventListener("click", function () {

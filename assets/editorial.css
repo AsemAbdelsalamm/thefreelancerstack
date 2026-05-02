@@ -228,6 +228,52 @@ section[aria-labelledby="cons-heading"] ul li::before {
   cursor: not-allowed;
 }
 
+/* Blog matrix: flex wrap so incomplete last rows have no phantom columns;
+   hairline borders are applied via JS to visible cells only (see site.js). */
+[data-page="blog"] .blog-matrix-shell {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+[data-page="blog"] .blog-matrix-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767.98px) {
+  [data-page="blog"] .blog-matrix-grid .blog-matrix-cell {
+    flex: 0 0 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  [data-page="blog"] .blog-matrix-grid .blog-matrix-cell {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    min-width: 0;
+  }
+}
+
+[data-page="blog"] .blog-matrix-hair-bl {
+  border-left: 1px solid #e8e0d5;
+}
+
+[data-page="blog"] .blog-matrix-hair-bt {
+  border-top: 1px solid #e8e0d5;
+}
+
+[data-page="blog"] .blog-matrix-hair-br {
+  border-right: 1px solid #e8e0d5;
+}
+
+[data-page="blog"] .blog-matrix-hair-bb {
+  border-bottom: 1px solid #e8e0d5;
+}
+
 /* Homepage — opinion-led hero headline (longer line fits) */
 .home-hero-hook {
   font-family: "Playfair Display", Georgia, serif;
