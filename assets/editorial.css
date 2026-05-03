@@ -332,3 +332,17 @@ section[aria-labelledby="cons-heading"] ul li::before {
     box-sizing: border-box;
   }
 }
+
+/* Mobile: base body and common small prose at least 15px */
+@media (max-width: 767.98px) {
+  body.min-h-screen.font-sans.antialiased {
+    font-size: 15px;
+  }
+
+  main#main-content p.text-muted,
+  main#main-content li.text-muted,
+  main#main-content .leading-relaxed.text-sm,
+  main#main-content nav.text-sm a {
+    font-size: 15px;
+  }
+}

@@ -51,7 +51,7 @@
 <body class="min-h-screen flex flex-col bg-page text-ink font-sans text-[15px] sm:text-[17px] leading-[1.75] antialiased" data-page="about">
  <div id="site-header"></div>
 
- <main id="main-content" class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full min-w-0">
+ <main id="main-content" class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-16 w-full min-w-0">
  <nav class="text-sm text-muted mb-8" aria-label="Breadcrumb">
  <ol class="flex flex-wrap gap-2">
  <li><a href="/index.html" class="hover:text-accent transition-colors">Home</a></li>
@@ -70,7 +70,7 @@
  </header>
 
  <div class="mt-12 border-t border-border">
- <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="mission-heading">
+ <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-8 sm:py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="mission-heading">
  <h2 id="mission-heading" class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent self-start md:pt-1">What we care about</h2>
  <div>
  <p>
@@ -79,7 +79,7 @@
  </div>
  </section>
 
- <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="picking-heading">
+ <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-8 sm:py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="picking-heading">
  <h2 id="picking-heading" class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent self-start md:pt-1">How we pick tools</h2>
  <div>
  <p>
@@ -88,7 +88,7 @@
  </div>
  </section>
 
- <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="affiliate-heading">
+ <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-8 sm:py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="affiliate-heading">
  <h2 id="affiliate-heading" class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent self-start md:pt-1">Affiliate disclosure</h2>
  <div>
  <p>
@@ -97,7 +97,7 @@
  </div>
  </section>
 
- <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-10 text-muted leading-relaxed" aria-labelledby="hello-heading">
+ <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-8 sm:py-10 text-muted leading-relaxed" aria-labelledby="hello-heading">
  <h2 id="hello-heading" class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent self-start md:pt-1">Say hello</h2>
  <div>
  <p>
@@ -110,7 +110,7 @@
  </main>
 
  <section class="border-t border-border bg-[#F5F0E8] font-sans" aria-labelledby="about-trust-heading">
- <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-14 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-16 w-full min-w-0">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-14 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 sm:gap-10 lg:gap-16 w-full min-w-0">
  <div class="min-w-0 w-full max-w-xl">
  <h2 id="about-trust-heading" class="font-serif text-xl sm:text-2xl font-semibold text-ink tracking-tight">How we pick tools</h2>
  <p class="mt-3 text-muted text-[15px] sm:text-base leading-relaxed">
@@ -120,18 +120,18 @@
  <a href="/about.html" class="text-accent text-sm font-semibold uppercase tracking-[0.12em] hover:underline underline-offset-4">Read our standards →</a>
  </p>
  </div>
- <div class="grid grid-cols-3 gap-3 sm:gap-8 w-full max-w-xl lg:max-w-none lg:w-auto lg:flex lg:shrink-0 lg:justify-end lg:gap-14 text-center sm:text-right">
- <div class="min-w-0">
- <p class="font-serif text-2xl sm:text-4xl font-semibold text-ink tabular-nums">23</p>
- <p class="mt-1 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-muted leading-snug">Tools reviewed</p>
+ <div class="flex flex-row justify-between gap-2 sm:gap-8 w-full max-w-xl lg:max-w-none lg:w-auto lg:justify-end lg:gap-14 text-center sm:text-right">
+ <div class="flex flex-col items-center sm:items-end gap-1.5 min-w-0 flex-1">
+ <p class="font-serif text-3xl sm:text-4xl font-bold text-ink tabular-nums leading-none">23</p>
+ <p class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted whitespace-nowrap leading-tight">Tools reviewed</p>
  </div>
- <div class="min-w-0">
- <p class="font-serif text-2xl sm:text-4xl font-semibold text-ink tabular-nums">7</p>
- <p class="mt-1 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-muted leading-snug">Categories</p>
+ <div class="flex flex-col items-center sm:items-end gap-1.5 min-w-0 flex-1">
+ <p class="font-serif text-3xl sm:text-4xl font-bold text-ink tabular-nums leading-none">7</p>
+ <p class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted whitespace-nowrap leading-tight">Categories</p>
  </div>
- <div class="min-w-0">
- <p class="font-serif text-2xl sm:text-4xl font-semibold text-ink tabular-nums">0</p>
- <p class="mt-1 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-muted leading-snug">Paid placements</p>
+ <div class="flex flex-col items-center sm:items-end gap-1.5 min-w-0 flex-1">
+ <p class="font-serif text-3xl sm:text-4xl font-bold text-ink tabular-nums leading-none">0</p>
+ <p class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted whitespace-nowrap leading-tight">Paid placements</p>
  </div>
  </div>
  </div>

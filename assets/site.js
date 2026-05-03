@@ -13,28 +13,54 @@
     return '<a href="' + href + '" class="' + cls + '">' + label + "</a>";
   }
 
+  function navLinkMobile(href, label, pageKey) {
+    var current = document.body.getAttribute("data-page") || "";
+    var isActive = current === pageKey;
+    var cls =
+      "block py-3.5 text-[15px] font-semibold uppercase tracking-[0.12em] transition-colors " +
+      (isActive ? "text-ink" : "text-muted hover:text-ink");
+    return '<a href="' + href + '" class="' + cls + '">' + label + "</a>";
+  }
+
+  var burgerSvg =
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+    '<path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+    "</svg>";
+
   var header =
-    '<header class="sticky top-0 z-50 border-b border-border bg-page">' +
-    '<nav class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 py-4" aria-label="Main">' +
-    '<a href="/index.html" class="font-serif text-xl sm:text-2xl font-semibold text-ink tracking-tight shrink-0 min-w-0">' +
+    '<header class="sticky top-0 z-50 border-b border-border bg-page relative">' +
+    '<nav class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-nowrap items-center justify-between gap-3 py-4" aria-label="Main">' +
+    '<a href="/index.html" class="font-serif text-lg sm:text-2xl font-semibold text-ink tracking-tight min-w-0 flex-1 sm:flex-initial pr-2">' +
     "The Freelancer Stack" +
     "</a>" +
-    '<div class="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 sm:ml-auto min-w-0 w-full sm:w-auto">' +
+    '<div class="hidden sm:flex flex-wrap items-center justify-end gap-x-4 gap-y-2 shrink-0">' +
     '<div class="flex flex-wrap items-center gap-x-4 gap-y-2">' +
     navLink("/categories.html", "Categories", "categories") +
     navLink("/categories/freelance-platforms.html", "Platforms", "platforms") +
     navLink("/blog.html", "Blog", "blog") +
     navLink("/about.html", "About", "about") +
     "</div>" +
-    '<a href="/blog/vpn-cafe-wifi-freelancers.html" class="hidden sm:inline-block px-2.5 py-1 bg-accent text-white text-[10px] font-semibold uppercase tracking-[0.12em] rounded-none whitespace-nowrap hover:bg-[#A85226] transition-colors">New: VPN guide</a>' +
-    '<span class="hidden sm:inline text-[11px] uppercase tracking-[0.14em] text-muted font-medium whitespace-nowrap">Vol. 1 — May 2026</span>' +
+    '<a href="/blog/vpn-cafe-wifi-freelancers.html" class="inline-block px-2.5 py-1 bg-accent text-white text-[10px] font-semibold uppercase tracking-[0.12em] rounded-none whitespace-nowrap hover:bg-[#A85226] transition-colors">New: VPN guide</a>' +
+    '<span class="text-[11px] uppercase tracking-[0.14em] text-muted font-medium whitespace-nowrap">Vol. 1 — May 2026</span>' +
     "</div>" +
-    "</nav></header>";
+    '<button type="button" id="site-nav-toggle" class="sm:hidden flex items-center justify-center w-11 h-11 shrink-0 rounded-none border border-border bg-surface text-ink hover:bg-warm transition-colors" aria-expanded="false" aria-controls="site-nav-dropdown" aria-label="Open menu">' +
+    burgerSvg +
+    "</button>" +
+    "</nav>" +
+    '<div id="site-nav-dropdown" class="site-nav-dropdown hidden sm:hidden absolute left-0 right-0 top-full border-b border-border bg-page shadow-[0_12px_24px_rgba(44,24,16,0.12)] z-50" role="navigation" aria-label="Mobile menu">' +
+    '<div class="max-w-6xl mx-auto px-4 py-1 flex flex-col divide-y divide-border">' +
+    navLinkMobile("/categories.html", "Categories", "categories") +
+    navLinkMobile("/categories/freelance-platforms.html", "Platforms", "platforms") +
+    navLinkMobile("/blog.html", "Blog", "blog") +
+    navLinkMobile("/about.html", "About", "about") +
+    '<a href="/blog/vpn-cafe-wifi-freelancers.html" class="block py-3.5 text-[15px] font-semibold uppercase tracking-[0.12em] text-accent hover:underline">New: VPN guide</a>' +
+    '<p class="py-3 text-[15px] uppercase tracking-[0.14em] text-muted font-medium whitespace-nowrap">Vol. 1 — May 2026</p>' +
+    "</div></div></header>";
 
   var year = new Date().getFullYear();
   var footer =
     '<footer class="mt-auto bg-footer text-page">' +
-    '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid sm:grid-cols-2 gap-12 text-sm sm:text-[15px] leading-relaxed text-footerMuted">' +
+    '<div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-14 grid sm:grid-cols-2 gap-10 sm:gap-12 text-sm sm:text-[15px] leading-relaxed text-footerMuted">' +
     "<div>" +
     '<p class="font-serif text-xl font-semibold text-page mb-3">The Freelancer Stack</p>' +
     "<p>Independent picks for freelancers who want fewer regret subscriptions. Some links are affiliate links — never extra cost to you, always disclosed.</p>" +
@@ -53,11 +79,63 @@
     " The Freelancer Stack. Written by freelancers, for freelancers." +
     "</div></footer>";
 
+  function bindMobileNav() {
+    var btn = document.getElementById("site-nav-toggle");
+    var panel = document.getElementById("site-nav-dropdown");
+    if (!btn || !panel) return;
+
+    function closeMenu() {
+      panel.classList.add("hidden");
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Open menu");
+    }
+
+    function openMenu() {
+      panel.classList.remove("hidden");
+      btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "Close menu");
+    }
+
+    function isOpen() {
+      return btn.getAttribute("aria-expanded") === "true";
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (isOpen()) closeMenu();
+      else openMenu();
+    });
+
+    panel.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!isOpen()) return;
+      if (btn.contains(e.target) || panel.contains(e.target)) return;
+      closeMenu();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    window.addEventListener(
+      "resize",
+      function () {
+        if (window.matchMedia("(min-width: 640px)").matches) closeMenu();
+      },
+      { passive: true }
+    );
+  }
+
   function inject() {
     var h = document.getElementById("site-header");
     var f = document.getElementById("site-footer");
     if (h) h.innerHTML = header;
     if (f) f.innerHTML = footer;
+    bindMobileNav();
   }
 
   if (document.readyState === "loading") {
