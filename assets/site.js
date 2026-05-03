@@ -1,6 +1,6 @@
 /**
  * The Freelancer Stack — shared chrome (nav + footer).
- * Use <body data-page="categories|blog|about"> (omit or use "home" for homepage).
+ * Use <body data-page="categories|platforms|blog|about"> (omit or use "home" for homepage).
  * Logo links home; no separate Home nav item.
  */
 (function () {
@@ -22,6 +22,7 @@
     '<div class="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 sm:ml-auto">' +
     '<div class="flex flex-wrap items-center gap-x-5 gap-y-2">' +
     navLink("/categories.html", "Categories", "categories") +
+    navLink("/categories/freelance-platforms.html", "Platforms", "platforms") +
     navLink("/blog.html", "Blog", "blog") +
     navLink("/about.html", "About", "about") +
     "</div>" +
@@ -42,6 +43,7 @@
     '<p class="font-serif text-lg font-semibold text-page mb-3">Explore</p>' +
     '<ul class="space-y-2">' +
     '<li><a href="/categories.html" class="text-page hover:underline underline-offset-4 decoration-white/40 rounded-none">All categories</a></li>' +
+    '<li><a href="/categories/freelance-platforms.html" class="text-page hover:underline underline-offset-4 decoration-white/40 rounded-none">Freelance platforms</a></li>' +
     '<li><a href="/blog.html" class="text-page hover:underline underline-offset-4 decoration-white/40 rounded-none">Blog</a></li>' +
     '<li><a href="/about.html" class="text-page hover:underline underline-offset-4 decoration-white/40 rounded-none">About</a></li>' +
     "</ul></div></div>" +
