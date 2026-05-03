@@ -60,16 +60,16 @@
  </ol>
  </nav>
 
- <div class="mb-12 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
- <div class="min-w-0 max-w-2xl">
- <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight font-serif">Notes from the desk</h1>
- <p class="mt-3 text-lg text-muted leading-relaxed">
+ <div class="mb-12 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-x-10">
+ <div class="w-full min-w-0 lg:flex-1 lg:min-w-0 lg:pr-4">
+ <h1 class="text-3xl sm:text-4xl lg:text-[2.5rem] xl:text-[2.75rem] font-semibold text-ink tracking-tight font-serif text-balance">Notes from the desk</h1>
+ <p class="mt-3 text-lg text-muted leading-relaxed max-w-3xl lg:max-w-none">
  Notes from real client work, not growth-hack fluff.
  </p>
  </div>
- <div class="shrink-0 lg:pt-1 w-full min-w-0 lg:max-w-none" role="toolbar" aria-label="Filter articles by category">
- <div class="-mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto overflow-y-hidden overscroll-x-contain [-webkit-overflow-scrolling:touch] pb-1">
- <div class="flex flex-nowrap sm:flex-wrap gap-2 justify-start lg:justify-end w-max sm:w-full min-w-0">
+ <div class="w-full shrink-0 lg:w-auto lg:max-w-[min(100%,28rem)] lg:pt-1" role="toolbar" aria-label="Filter articles by category">
+ <div class="-mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto overflow-y-hidden overscroll-x-contain [-webkit-overflow-scrolling:touch] pb-1 lg:mx-0 lg:overflow-visible lg:pb-0">
+ <div class="flex flex-nowrap sm:flex-wrap gap-2 justify-start w-max min-w-0 sm:w-full lg:w-auto lg:flex-wrap lg:justify-end">
  <button type="button" data-blog-filter="all" aria-pressed="true" class="blog-filter-btn border border-border bg-ink px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-page transition-colors hover:bg-[#141414] shrink-0">All</button>
  <button type="button" data-blog-filter="writing" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink shrink-0">Writing</button>
  <button type="button" data-blog-filter="design" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink shrink-0">Design</button>
