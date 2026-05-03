@@ -51,7 +51,7 @@
 <body class="min-h-screen flex flex-col bg-page text-ink font-sans text-[17px] leading-[1.75] antialiased" data-page="about">
  <div id="site-header"></div>
 
- <main id="main-content" class="flex-1 max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
+ <main id="main-content" class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
  <nav class="text-sm text-muted mb-8" aria-label="Breadcrumb">
  <ol class="flex flex-wrap gap-2">
  <li><a href="/index.html" class="hover:text-accent transition-colors">Home</a></li>
@@ -61,44 +61,81 @@
  </nav>
 
  <article>
- <header class="mb-10">
- <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight">About The Freelancer Stack</h1>
- <p class="mt-4 text-lg text-muted leading-relaxed">
+ <header class="mb-0">
+ <hr class="w-full border-0 border-t-[3px] border-t-[#1A1A1A] shrink-0" aria-hidden="true">
+ <h1 class="mt-8 text-3xl sm:text-4xl font-semibold text-ink tracking-tight">About The Freelancer Stack</h1>
+ <p class="mt-4 text-lg text-muted leading-relaxed max-w-3xl">
  We are a small editorial site by freelancers, for freelancers, focused on practical tools that quietly improve how you sell, deliver, and get paid.
  </p>
  </header>
 
- <section class="space-y-8 text-muted leading-relaxed" aria-labelledby="mission-heading">
+ <div class="mt-12 border-t border-border">
+ <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="mission-heading">
+ <h2 id="mission-heading" class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent self-start md:pt-1">What we care about</h2>
  <div>
- <h2 id="mission-heading" class="text-xl font-semibold text-ink mb-3">What we care about</h2>
  <p>
  Freelancers juggle sales, delivery, admin, and learning, often on their own. Our goal is to shrink research time with clear category guides, honest pros and cons, and links when you are ready to try something new.
  </p>
  </div>
+ </section>
 
+ <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="picking-heading">
+ <h2 id="picking-heading" class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent self-start md:pt-1">How we pick tools</h2>
  <div>
- <h2 class="text-xl font-semibold text-ink mb-3">How we pick tools</h2>
  <p>
  We favor products with strong reputations among independent workers, sensible pricing paths for solo operators, and workflows that hold up under real client deadlines. When something is niche or quirky, we say so.
  </p>
  </div>
+ </section>
 
+ <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-10 border-b border-border text-muted leading-relaxed" aria-labelledby="affiliate-heading">
+ <h2 id="affiliate-heading" class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent self-start md:pt-1">Affiliate disclosure</h2>
  <div>
- <h2 class="text-xl font-semibold text-ink mb-3">Affiliate disclosure</h2>
  <p>
  Some outbound links on this site may be affiliate links. That means we could earn a commission if you sign up or purchase, never at extra cost to you. <!-- TODO: Replace placeholder affiliate links across tool pages with your tracked URLs. --> Recommendations stay editorial; sponsorships, if any later, will be labeled clearly.
  </p>
  </div>
+ </section>
 
+ <section class="grid grid-cols-1 md:grid-cols-[minmax(0,30%)_minmax(0,70%)] gap-x-8 gap-y-4 py-10 text-muted leading-relaxed" aria-labelledby="hello-heading">
+ <h2 id="hello-heading" class="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent self-start md:pt-1">Say hello</h2>
  <div>
- <h2 class="text-xl font-semibold text-ink mb-3">Say hello</h2>
  <p>
  Spot something outdated or missing a category you need? We want The Freelancer Stack to stay useful over time. Browse <a href="/categories.html" class="text-accent hover:underline">all categories</a> or read longer tips on the <a href="/blog.html" class="text-accent hover:underline">blog</a>.
  </p>
  </div>
  </section>
+ </div>
  </article>
  </main>
+
+ <section class="border-t border-border bg-[#F5F0E8] font-sans" aria-labelledby="about-trust-heading">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-14 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-16">
+ <div class="min-w-0 max-w-xl">
+ <h2 id="about-trust-heading" class="font-serif text-xl sm:text-2xl font-semibold text-ink tracking-tight">How we pick tools</h2>
+ <p class="mt-3 text-muted text-[15px] sm:text-base leading-relaxed">
+ Every review here comes from real client work, not a press kit. We do not sell placement on this list — if something disappoints, we say that plainly on the full write-up.
+ </p>
+ <p class="mt-5">
+ <a href="/about.html" class="text-accent text-sm font-semibold uppercase tracking-[0.12em] hover:underline underline-offset-4">Read our standards →</a>
+ </p>
+ </div>
+ <div class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-end gap-8 sm:gap-12 lg:gap-14 w-full lg:w-auto shrink-0 text-left sm:text-right">
+ <div>
+ <p class="font-serif text-3xl sm:text-4xl font-semibold text-ink tabular-nums">18</p>
+ <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">Tools reviewed</p>
+ </div>
+ <div>
+ <p class="font-serif text-3xl sm:text-4xl font-semibold text-ink tabular-nums">6</p>
+ <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">Categories</p>
+ </div>
+ <div>
+ <p class="font-serif text-3xl sm:text-4xl font-semibold text-ink tabular-nums">0</p>
+ <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">Paid placements</p>
+ </div>
+ </div>
+ </div>
+ </section>
 
  <div id="site-footer"></div>
  <script src="/assets/site.js"></script>
