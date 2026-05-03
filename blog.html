@@ -48,10 +48,10 @@
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="/assets/editorial.css">
 </head>
-<body class="min-h-screen flex flex-col bg-page text-ink font-sans text-[17px] leading-[1.75] antialiased" data-page="blog">
+<body class="min-h-screen flex flex-col bg-page text-ink font-sans text-[15px] sm:text-[17px] leading-[1.75] antialiased" data-page="blog">
  <div id="site-header"></div>
 
- <main id="main-content" class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
+ <main id="main-content" class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full min-w-0">
  <nav class="text-sm text-muted mb-10" aria-label="Breadcrumb">
  <ol class="flex flex-wrap gap-2">
  <li><a href="/index.html" class="hover:text-accent transition-colors">Home</a></li>
@@ -67,14 +67,16 @@
  Notes from real client work, not growth-hack fluff.
  </p>
  </div>
- <div class="shrink-0 lg:pt-1" role="toolbar" aria-label="Filter articles by category">
- <div class="flex flex-wrap gap-2 justify-start lg:justify-end">
- <button type="button" data-blog-filter="all" aria-pressed="true" class="blog-filter-btn border border-border bg-ink px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-page transition-colors hover:bg-[#141414]">All</button>
- <button type="button" data-blog-filter="writing" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Writing</button>
- <button type="button" data-blog-filter="design" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Design</button>
- <button type="button" data-blog-filter="finance" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Finance</button>
- <button type="button" data-blog-filter="security" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Security</button>
- <button type="button" data-blog-filter="workflow" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink">Workflow</button>
+ <div class="shrink-0 lg:pt-1 w-full min-w-0 lg:max-w-none" role="toolbar" aria-label="Filter articles by category">
+ <div class="-mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto overflow-y-hidden overscroll-x-contain [-webkit-overflow-scrolling:touch] pb-1">
+ <div class="flex flex-nowrap sm:flex-wrap gap-2 justify-start lg:justify-end w-max sm:w-full min-w-0">
+ <button type="button" data-blog-filter="all" aria-pressed="true" class="blog-filter-btn border border-border bg-ink px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-page transition-colors hover:bg-[#141414] shrink-0">All</button>
+ <button type="button" data-blog-filter="writing" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink shrink-0">Writing</button>
+ <button type="button" data-blog-filter="design" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink shrink-0">Design</button>
+ <button type="button" data-blog-filter="finance" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink shrink-0">Finance</button>
+ <button type="button" data-blog-filter="security" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink shrink-0">Security</button>
+ <button type="button" data-blog-filter="workflow" aria-pressed="false" class="blog-filter-btn border border-border bg-surface px-4 py-2.5 text-sm sm:text-[11px] font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:border-ink hover:text-ink shrink-0">Workflow</button>
+ </div>
  </div>
  </div>
  </div>
@@ -618,8 +620,8 @@
  </div>
  </section>
 
- <div id="blog-load-more-wrap" class="mt-12 flex justify-center">
- <button type="button" id="blog-load-more" class="rounded-none border border-ink bg-transparent px-10 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:bg-ink hover:text-page">
+ <div id="blog-load-more-wrap" class="mt-12 flex justify-center px-1 sm:px-0">
+ <button type="button" id="blog-load-more" class="w-full max-w-sm sm:max-w-none sm:w-auto rounded-none border border-ink bg-transparent px-10 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:bg-ink hover:text-page">
  Load more
  </button>
  </div>
